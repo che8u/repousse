@@ -73,9 +73,11 @@ void usingMetal(unsigned int vecLength) {
 
   // * Step 7: Set pipeline state and buffers
   pCommandEncoder->setComputePipelineState(pComputePipelineState);
+  // *                      offset, index ▼
   pCommandEncoder->setBuffer(pBufferA, 0, 0);
   pCommandEncoder->setBuffer(pBufferB, 0, 1);
   pCommandEncoder->setBuffer(pBufferC, 0, 2);
+  // ! The index must correspond with the one defined in source MSL
 
   // * Step 8: Dispatch threads
   MTL::Size gridSize(vecLength, 1, 1);
