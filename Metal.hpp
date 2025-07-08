@@ -20,6 +20,9 @@
 
 #pragma once
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
+
 #define _NS_WEAK_IMPORT __attribute__((weak_import))
 #ifdef METALCPP_SYMBOL_VISIBILITY_HIDDEN
 #define _NS_EXPORT __attribute__((visibility("hidden")))
@@ -7240,7 +7243,7 @@ struct PackedFloatQuaternion
     float&       operator[](int idx);
     const float& operator[](int idx) const;
 
-    union 
+    union
     {
         struct
         {
@@ -7252,7 +7255,7 @@ struct PackedFloatQuaternion
 
         float elements[4];
     };
-    
+
 } _MTL_PACKED;
 #pragma clang diagnostic pop
 
@@ -21778,3 +21781,4 @@ _MTL_INLINE void MTL::VisibleFunctionTable::setFunctions(const MTL::FunctionHand
     (major == METALCPP_VERSION_MAJOR && minor < METALCPP_VERSION_MINOR) || \
     (major == METALCPP_VERSION_MAJOR && minor == METALCPP_VERSION_MINOR && patch <= METALCPP_VERSION_PATCH))
 
+#pragma clang diagnostic pop
