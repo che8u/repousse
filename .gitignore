@@ -1,3 +1,7 @@
-*.DS_Store
-*.vscode
+**.DS_Store
+**.vscode
 /py
+
+# * Xcode stuff:
+**/*.pbxproj
+/cpp/day5/fractal.xcodeproj
